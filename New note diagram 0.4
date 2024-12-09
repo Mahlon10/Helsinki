@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Navigate to https://studies.cs.helsinki.fi/exampleapp/notes
+    Browser->>Server: Request for the notes page
+    Server-->>Browser: HTML, CSS, and JS for the notes app
+    User->>Browser: Writes note into the text field
+    User->>Browser: Clicks "Save" button
+    Browser->>Server: Sends POST request with note data
+    Server-->>Browser: Response (e.g., confirmation or updated note list)
+    Browser-->>User: Updates the UI to display the new note

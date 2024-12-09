@@ -1,0 +1,10 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Writes note into the text field
+    User->>Browser: Clicks "Save" button
+    Browser->>Server: Sends POST request with new note data (JSON)
+    Server-->>Browser: Sends a successful response
+    User->>Browser: Views updated notes list

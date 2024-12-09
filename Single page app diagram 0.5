@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Navigate to https://studies.cs.helsinki.fi/exampleapp/spa
+    Browser->>Server: Request for the SPA page
+    Server-->>Browser: Sends HTML for SPA
+    Browser->>Server: Request for JavaScript files
+    Server-->>Browser: Sends JavaScript files
+    Browser->>Server: Request for initial note data (e.g., GET request)
+    Server-->>Browser: Sends JSON data for existing notes
+    Browser-->>User: Renders the SPA with fetched notes
